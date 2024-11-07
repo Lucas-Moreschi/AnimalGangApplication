@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animal Gang">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="src/images/logo-preto.ico">
+    <title>Sobre Nós - Animal Gang</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(128, 0, 128, 0.8), rgba(0, 0, 255, 0.8));
+            color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header .active {
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #ffdd57;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            padding: 5px 10px;
+        }
+
+        header nav ul li a:hover {
+            color: #ffd600;
+            transform: scale(1.05);
+        }
+
+        .sobre-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .sobre-container h1 {
+            font-size: 36px;
+            color: #ffdd57;
+            margin-bottom: 20px;
+        }
+
+        .sobre-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #f8f8f8;
+        }
+
+        .sobre-container a {
+            color: #ffdd57;
+            text-decoration: underline;
+        }
+
+        .pix-donations {
+            background-color: rgba(255, 221, 87, 0.15);
+            border: 1px solid #ffdd57;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            color: #f8f8f8;
+            text-align: center;
+        }
+
+        .pix-donations h2 {
+            font-size: 24px;
+            color: #ffdd57;
+            margin-bottom: 10px;
+        }
+
+        .pix-donations p {
+            margin: 10px 0;
+        }
+
+        .pix-donations .pix-key {
+            font-weight: bold;
+            font-size: 18px;
+            color: #ffdd57;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #ffdd57;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .redes-sociais {
+            display: flex;
+            position: absolute;
+            bottom: 20px;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .redes-sociais a {
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .redes-sociais .instagram i {
+            color: #f09433;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .redes-sociais .facebook i {
+            color: #3b5998;
+        }
+
+        .redes-sociais .whatsapp i {
+            color: #25d366;
+        }
+
+        .redes-sociais a:hover {
+            opacity: 0.8;
+        }
+
+        .redes-sociais i {
+            font-size: 36px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="container" id="home">
+        <a href="#home"><img src="src/images/ADESIVO.png" width="100" height="100" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="/" class="active">Início</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sobre-container">
+        <h1>Sobre Nós</h1>
+        <p>Na Animal Gang, acreditamos que todos os pets merecem um lar amoroso. Nossa missão é conectar pessoas com animais que precisam de um novo começo.</p>
+        <p>Para saber mais sobre nosso trabalho e como você pode ajudar, siga-nos no Instagram: <a href="https://www.instagram.com/animalgangbr/#" target="_blank">Instagram</a>.</p>
+        
+        <div class="pix-donations">
+            <h2>Ajude-nos com uma doação!</h2>
+            <p>Sua contribuição faz toda a diferença para manter nosso trabalho. Ajude a transformar a vida de um pet!</p>
+            <p><strong>Chave PIX:</strong> <span class="pix-key">seuemail@example.com</span></p>
+            <p>Qualquer valor é bem-vindo e será usado para alimentação, cuidados veterinários e abrigo para os animais.</p>
+        </div>
+
+        <div class="redes-sociais">
+            <a href="https://www.instagram.com/animalgangbr/#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/animalgangbr" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Todos os direitos reservados &copy; 2024 - Animal Gang</p>
+    </footer>
+</body>
+
+</html>

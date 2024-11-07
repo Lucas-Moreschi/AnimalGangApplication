@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animal Gang">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="src/images/logo preto.ico">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>AnimalGang</title>
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <header class="container" id="home">
+        <a href="#home"><img src="src/images/ADESIVO.png" width="100" height="100" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Início</a></li>
+				<li><a href="/sobre">Sobre</a></li>
+                <li><a href="#pets">Adote um Pet</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="introducao-bg">
+        <div class="introducao">
+            <img src="src/images/img-intro.svg" width="480" height="460" alt="Imagem de introdução">
+            <div class="intro-conteudo">
+                <h1>Bem-vindo à nossa plataforma, feita para os apaixonados por pets! Descubra tudo sobre diferentes espécies e aprenda as melhores dicas para cuidar dos seus amigos peludos.</h1>
+                <p>O abandono de animais aumenta a cada dia. Nossa ONG precisa da sua ajuda para mudar essa realidade!</p>
+                <p><strong>Adote um amigo(a) e incentive seus amigos e familiares a fazer o mesmo.</strong></p>
+                <a href="#pets"><button class="button">Quero Adotar</button></a>
+                <button class="button">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="pets-bg" id="pets">
+        <div class="pets-conteudo">
+            <h1 class="pets-titulo">Animais aguardando por um lar</h1>
+			<div class="pets-display">
+						    <div th:each="pet : ${pets}" class="pet-item">
+						        <img th:src="${pet.imagemURL}" th:alt="${pet.descricao}" />
+						        <h3 th:text="${pet.nome}">Nome do Pet</h3>
+						        <small th:text="${pet.sexo + ' | ' + pet.idade}">Sexo | Idade</small>
+						    </div>
+			</div>
+        </div>
+    </section>
+
+    <section class="orientacoes-bg">
+        <div class="orientacoes-container">
+            <h1 class="orientacoes-titulo">Dicas para a Adoção</h1>
+            <ul class="orientacoes-lista">
+                <li>Proporcione um ambiente acolhedor e seguro para o seu novo amigo.</li>
+                <li>Cuide da alimentação e das visitas ao veterinário.</li>
+                <li>Dedique tempo para brincar e se socializar com o pet.</li>
+                <li>Considere adotar dois animais para que tenham companhia.</li>
+                <li>Tenha paciência na adaptação do novo animal ao seu lar.</li>
+            </ul>
+            <p class="aviso">
+                Não se esqueça de preencher o <a href="https://form.jotform.com/242747474615060?tpclid=facebook.PAZXh0bgNhZW0CMTEAAaYnFx-IqUyKHVgTmt30fRhWwFkwE2UxTLbGE4EaixNfcCv_4SUF7zqtDQQ_aem_aHA8TCC6OwJkXxs3aodWNg" target="_blank" style="color: var(--cor-principal); text-decoration: underline;">formulário de adoção</a> para garantir a segurança do processo.
+            </p>
+        </div>
+    </section>
+
+    <section class="contato-bg" id="contato">
+        <div class="form-container">
+            <h2>Fale Conosco</h2>
+            <form class="formulario" action="#">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu E-mail" required>
+                <textarea placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+
+<!--            <ul class="contato-info">
+                <li><strong>Endereço:</strong> Rua dos Bichos, 123 - Bairro Animal</li>
+                <li><strong>Telefone:</strong> <a href="tel:+557199999999">+55 (11) </a></li>
+                <li><strong>E-mail:</strong> <a href="mailto:@contato.com">@contato.com</a></li>
+            </ul>
+			-->
+            <div class="redes-sociais">
+                <div class="whatsapp">
+                    <a href="https://chat.whatsapp.com/HeK9Ijc7FoOBOvGRncZdGm?fbclid=PAZXh0bgNhZW0CMTEAAaYuO1g9IiN7I2IqDbzrkB63SzijgHH2_P7s16E_9NGNMPinIUxhhfzr5xs_aem_Y54Q1urZJo12iR9bWSfsvg" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="facebook">
+                <a href="https://www.facebook.com/comunidadeanimalgang/?locale=pt_BR" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="instagram">
+                <a href="https://www.instagram.com/animalgangbr/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 AnimalGang. Cuidando do seu pet com carinho. Todos os direitos reservados.</p>
+    </footer>
+	<script src="src/script/script.js"></script>
+</body>
+
+</html>
