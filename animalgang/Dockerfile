@@ -1,18 +1,27 @@
-FROM ubuntu:latest AS build
+# Etapa de build
+FROM maven:3.8.6-openjdk-17-slim AS build
 
+# Atualiza o repositório de pacotes e instala as dependências necessárias
 RUN apt-get update && \
-    apt-get install openjdk-17-jdk -y
+    apt-get install -y openjdk-17-jdk
 
-COPY . .
+# Copia os arquivos da aplicação para o contêiner
+COPY . /app
 
-RUN chmod +x gradlew
+# Define o diretório de trabalho
+WORKDIR /app
 
-RUN ./gradlew bootJar --no-daemon
+# Compila a aplicação usando Maven e gera o JAR
+RUN mvn clean package -DskipTests
 
+# Etapa final
 FROM openjdk:17-jdk-slim
 
+# Exponha a porta que a aplicação vai rodar
 EXPOSE 8080
 
-COPY --from=build /build/libs/*.jar app.jar
+# Copia o JAR gerado da etapa de build para a imagem final
+COPY --from=build /app/target/*.jar app.jar
 
+# Comando de inicialização da aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
