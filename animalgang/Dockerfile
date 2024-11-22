@@ -1,8 +1,18 @@
-FROM maven:3-eclipse-temurin-17 AS build
-COPY . .
-RUN mvn clean package -DskipTests
+FROM ubuntu:latest AS build
 
-FROM eclipse-temurin:17-alpine
-COPY --from=build /target/*.jar demo.jar
+RUN apt-get update && \
+    apt-get install openjdk-17-jdk -y
+
+COPY . .
+
+RUN chmod +x gradlew
+
+RUN ./gradlew bootJar --no-daemon
+
+FROM openjdk:17-jdk-slim
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+
+COPY --from=build /build/libs/*.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
